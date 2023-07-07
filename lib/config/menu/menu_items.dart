@@ -38,4 +38,16 @@ const appMenuItems = <MenuItems>[
     url: '/snackbars',
     icon: Icons.info_outline,
   ),
+  MenuItems(
+    title: 'Contenedor animado',
+    subTitle: 'Stateful widget animado',
+    url: '/animated',
+    icon: Icons.check_box_outlined,
+  ),
+  MenuItems(
+    title: 'Controles UI',
+    subTitle: 'Una serie de controles de Flutter',
+    url: '/ui-controls',
+    icon: Icons.car_rental_outlined,
+  ),
 ];
