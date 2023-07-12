@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -34,13 +35,26 @@ class AppTutorialScreen extends StatefulWidget {
 
 class _AppTutorialScreenState extends State<AppTutorialScreen> {
   final PageController pageViewController = PageController();
+  bool endReached = false;
   @override
   void initState() {
     super.initState();
     pageViewController.addListener(() {
-      
+      final page = pageViewController.page ?? 0;
+      if (!endReached && page >= (slides.length - 1.5)){
+         setState(() {
+           endReached = true;
+         });
+      }
     });
   }
+
+  @override
+  void dispose() {
+    pageViewController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +78,20 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
               child: const Text('Salir'),
               onPressed: () => context.pop(),
             ),
-          )
+          ),
+          endReached ?
+          Positioned(
+            bottom: 30,
+            right: 30,
+            child: FadeInRight(
+              from: 15,
+              delay: const Duration(seconds: 1),
+              child: FilledButton(
+                onPressed: () => context,
+                child: const Text('Comenzar'),
+              ),
+            )
+          ) : const SizedBox()
         ],
       ),
     );
