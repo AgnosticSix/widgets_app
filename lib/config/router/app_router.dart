@@ -16,5 +16,6 @@ final appRouter = GoRouter(
     GoRoute(name: UiControlsScreen.name, path: '/ui-controls', builder: (context, state) => const UiControlsScreen(),),
     GoRoute(name: AppTutorialScreen.name, path: '/tutorial', builder: (context, state) => const AppTutorialScreen(),),
     GoRoute(name: InfiniteScrollScreen.name, path: '/infinite', builder: (context, state) => const InfiniteScrollScreen(),),
+    GoRoute(name: ThemeChangerScreen.name, path: '/theme-changer', builder: (context, state) => const ThemeChangerScreen(),),
   ],
 );
