@@ -23,22 +23,22 @@ class _ProgressView extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Text('Circular Progress Indicator'),
-          SizedBox(
+          const Text('Circular Progress Indicator'),
+          const SizedBox(
             height: 10,
           ),
-          CircularProgressIndicator(
+          const CircularProgressIndicator(
             strokeWidth: 2,
             backgroundColor: Colors.black45,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Text('Circular and lineal Indicator controlled'),
-          SizedBox(
+          const Text('Circular and lineal Indicator controlled'),
+          const SizedBox(
             height: 10,
           ),
           _ControllerProgressIndicator(),
